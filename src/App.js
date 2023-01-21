@@ -1,23 +1,89 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useEffect, useState } from "react";
 
 function App() {
+  const actions = ["🧱", "📄", "✂"];
+
+  const [userAction, setUserAction] = useState(null);
+  const [computerAction, setComputerAction] = useState(null);
+  const [winner, setWinner] = useState(null);
+
+  const handleChange = (value) => {
+    setUserAction(value);
+    generateComputerAction();
+  };
+
+  const generateComputerAction = () => {
+    const radAction = Math.floor(Math.random() * actions.length);
+    const randomAction = actions[radAction];
+    setComputerAction(randomAction);
+  };
+
+  const handleReset = () => {
+    setUserAction(null);
+    setComputerAction(null);
+    setWinner("");
+  };
+
+  useEffect(() => {
+    result();// eslint-disable-next-line 
+  }, [userAction, computerAction]);
+
+  const result = () => {
+    switch (userAction + computerAction) {
+      case "✂📄":
+      case "🧱✂":
+      case "🧱📄":
+        setWinner("You Win ! 😍");
+        break;
+      case "📄✂":
+      case "✂🧱": // eslint-disable-next-line
+      case "🧱📄":
+        setWinner("You Loose! 😓");
+        break;
+      case "📄📄":
+      case "✂✂":
+      case "🧱🧱":
+        setWinner("Tie ! 🙁");
+        break;
+        default :
+        handleReset()
+    }
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1> Rock Paper Scissor</h1>
+      <h2> Pick One </h2>
+      <div className="action-container">
+        {actions.map((action, name) => (
+          <button
+            key={name}
+            className="action-btn"
+            onClick={() => handleChange(action)}
+          >
+            {action}
+          </button>
+        ))}
+      </div>
+      <div className="player-container">
+        <h2>
+          You <div className="action-chosen">{userAction}</div>
+        </h2>
+        <h2>
+          Computer <div className="action-chosen"> {computerAction} </div>
+        </h2>
+      </div>
+
+      <h3 className="winner"> {winner} </h3>
+      <button
+        className="play"
+        onClick={() => {
+          handleReset();
+        }}
+      >
+        Play Again
+      </button>
     </div>
   );
 }

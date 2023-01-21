@@ -1,38 +1,88 @@
 .App {
   text-align: center;
+  font-family: system-ui;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: rgba(0, 0, 0, 0.822);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1{
+  text-align: center;
+  color:  rgba(29, 161, 242, 0.849);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.player-container{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content:space-around;
+}
+
+.player-action{
+  display: flex;
+  flex-direction: row;
   align-items: center;
+  justify-content:space-around;
+}
+
+h2{
+  padding-right: 10px ;
+  color: rgba(29, 161, 242, 0.849) ;
+}
+
+.action-chosen{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  height:50px;
+  width:50px;
+  color: rgba(29, 161, 242, 0.849);
+  background-color: white;
+  border: 1px solid rgba(29, 161, 242, 0.849);
+  border-radius: 50% ;
+}
+
+.action-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; 
+  margin-top: 30px;
+}
+
+.action-btn{
+  height:50px;
+  width:50px;
   color: white;
+  border: 1px solid rgba(29, 161, 242, 0.849);
+  border-radius: 50% ;
+  background-color:  rgba(29, 161, 242, 0.849);
+  cursor: pointer;
+  font-size: large;
 }
 
-.App-link {
-  color: #61dafb;
+.action-btn:hover{
+  background-color:rgba(18, 143, 221, 0.767) ;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.winner{
+  text-align: center;
+  color:  rgba(29, 161, 242, 0.849);
 }
+
+.play{
+  height: 30px;
+  width: 80px;
+  border: 2px solid rgba(29, 161, 242, 0.849);
+  border-radius: 5px;
+  cursor: pointer;
+  color:rgba(46, 167, 241, 0.767);
+  background-color: white;
+}
+
+.play:hover{
+  color:aliceblue;
+  background-color: rgba(29, 161, 242, 0.849);
+}
+

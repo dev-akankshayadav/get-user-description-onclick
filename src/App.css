@@ -12,19 +12,6 @@ h1{
   color:  rgba(29, 161, 242, 0.849);
 }
 
-.player-container{
-  display: flex;
-  flex-direction: row;
-  justify-content:space-around;
-}
-
-.player-action{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content:space-around;
-}
-
 h2{
   padding-right: 10px ;
   color: rgba(29, 161, 242, 0.849) ;
@@ -32,6 +19,7 @@ h2{
 
 .action-chosen{
   margin-top: 10px;
+  margin-left: 240px;
   display: flex;
   flex-direction: row;
   justify-content: center;

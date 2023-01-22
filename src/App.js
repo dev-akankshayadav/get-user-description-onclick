@@ -66,10 +66,14 @@ function App() {
           </button>
         ))}
       </div>
-      <h2>You </h2>
-      <div className="action-chosen">{userAction}</div>
-      <h2> Computer </h2>
-      <div className="action-chosen"> {computerAction} </div>
+      <div className="player-container">
+        <h2>You </h2>
+        <div className="action-chosen">{userAction}</div>
+      </div>
+      <div className="player-container">
+        <h2> Computer </h2>
+        <div className="action-chosen"> {computerAction} </div>
+      </div>
       <h3 className="winner"> {winner} </h3>
       <button
         className="play"

@@ -26,7 +26,7 @@ function App() {
   };
 
   useEffect(() => {
-    result();// eslint-disable-next-line 
+    result(); // eslint-disable-next-line
   }, [userAction, computerAction]);
 
   const result = () => {
@@ -46,8 +46,8 @@ function App() {
       case "🧱🧱":
         setWinner("Tie ! 🙁");
         break;
-        default :
-        handleReset()
+      default:
+        handleReset();
     }
   };
 
@@ -66,15 +66,10 @@ function App() {
           </button>
         ))}
       </div>
-      <div className="player-container">
-        <h2>
-          You <div className="action-chosen">{userAction}</div>
-        </h2>
-        <h2>
-          Computer <div className="action-chosen"> {computerAction} </div>
-        </h2>
-      </div>
-
+      <h2>You </h2>
+      <div className="action-chosen">{userAction}</div>
+      <h2> Computer </h2>
+      <div className="action-chosen"> {computerAction} </div>
       <h3 className="winner"> {winner} </h3>
       <button
         className="play"
@@ -82,7 +77,7 @@ function App() {
           handleReset();
         }}
       >
-        Play Again
+        Restart
       </button>
     </div>
   );

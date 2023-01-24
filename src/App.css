@@ -1,79 +1,106 @@
 .App {
   text-align: center;
-  font-family: system-ui;
+  font-family: sans-serif;
 }
 
-body {
-  background-color: rgba(0, 0, 0, 0.822);
+.detail-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+  background-color: pink;
+  border-radius: 20px;
+  margin: 20px;
+  padding: 30px;
+  font-family: sans-serif;
 }
 
-h1{
-  text-align: center;
-  color:  rgba(29, 161, 242, 0.849);
+.company-name {
+  display: flex;
 }
 
-.player-container{
+.contact-wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
-h2{
-  padding: 10px;
-  color: rgba(29, 161, 242, 0.849) ;
+.city-wrapper {
+  display: flex;
+  flex-direction: column;
 }
 
-.action-chosen{
+.state-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 1rem;
+}
+
+h2 {
+  font-size: 0.75rem;
+}
+
+button {
   display: flex;
   justify-content: center;
   align-items: center;
-  height:50px;
-  width:50px;
-  color: rgba(29, 161, 242, 0.849);
-  background-color: white;
-  border: 1px solid rgba(29, 161, 242, 0.849);
-  border-radius: 50% ;
+  margin-top: 20px;
+  border: none;
+  border-radius: 50px;
+  background-color: red;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
 }
 
-.action-container{
+.detailed-description {
+  padding-top: 50%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around; 
-  margin-top: 30px;
-}
-
-.action-btn{
-  height:50px;
-  width:50px;
-  color: white;
-  border: 1px solid rgba(29, 161, 242, 0.849);
-  border-radius: 50% ;
-  background-color:  rgba(29, 161, 242, 0.849);
-  cursor: pointer;
-  font-size: large;
-}
-
-.action-btn:hover{
-  background-color:rgba(18, 143, 221, 0.767) ;
-}
-
-.winner{
-  text-align: center;
-  color:  rgba(29, 161, 242, 0.849);
-}
-
-.play{
-  height: 30px;
-  width: 80px;
-  border: 2px solid rgba(29, 161, 242, 0.849);
-  border-radius: 5px;
-  cursor: pointer;
-  color:rgba(46, 167, 241, 0.767);
+  align-items: flex-start;
+  justify-content: space-between;
   background-color: white;
+  border-radius: 20px;
+  margin: 20px;
+  padding: 30px;
+  opacity: 1;
+  cursor: pointer;
+}
+.detailed-description-hide {
+  opacity: 0;
 }
 
-.play:hover{
-  color:aliceblue;
-  background-color: rgba(29, 161, 242, 0.849);
+h1 {
+  font-size: 1rem;
 }
 
+h2 {
+  font-size: 0.75rem;
+}
+
+h3 {
+  font-size: 0.65rem;
+}
+.company-wrapper {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.address-wrapper {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.username-wrapper {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}

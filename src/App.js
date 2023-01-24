@@ -1,89 +1,41 @@
 import "./App.css";
 import { useEffect, useState } from "react";
+import SingleUser from "./components/SingleUser";
+
 
 function App() {
-  const actions = ["🧱", "📄", "✂"];
-
-  const [userAction, setUserAction] = useState(null);
-  const [computerAction, setComputerAction] = useState(null);
-  const [winner, setWinner] = useState(null);
-
-  const handleChange = (value) => {
-    setUserAction(value);
-    generateComputerAction();
-  };
-
-  const generateComputerAction = () => {
-    const radAction = Math.floor(Math.random() * actions.length);
-    const randomAction = actions[radAction];
-    setComputerAction(randomAction);
-  };
-
-  const handleReset = () => {
-    setUserAction(null);
-    setComputerAction(null);
-    setWinner("");
+  const [usersData, setUsersData] = useState([]);
+  const getUsers = async () => {
+    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+    console.log(response);
+    const data = await response.json();
+    console.log(data);
+    setUsersData(data);
   };
 
   useEffect(() => {
-    result(); // eslint-disable-next-line
-  }, [userAction, computerAction]);
+    getUsers();
+  }, []);
 
-  const result = () => {
-    switch (userAction + computerAction) {
-      case "✂📄":
-      case "🧱✂":
-      case "🧱📄":
-        setWinner("You Win ! 😍");
-        break;
-      case "📄✂":
-      case "✂🧱": // eslint-disable-next-line
-      case "🧱📄":
-        setWinner("You Loose! 😓");
-        break;
-      case "📄📄":
-      case "✂✂":
-      case "🧱🧱":
-        setWinner("Tie ! 🙁");
-        break;
-      default:
-        handleReset();
-    }
-  };
+  console.log(usersData);
 
   return (
-    <div className="App">
-      <h1> Rock Paper Scissor</h1>
-      <h2> Pick One </h2>
-      <div className="action-container">
-        {actions.map((action, name) => (
-          <button
-            key={name}
-            className="action-btn"
-            onClick={() => handleChange(action)}
-          >
-            {action}
-          </button>
-        ))}
-      </div>
-      <div className="player-container">
-        <h2>You </h2>
-        <div className="action-chosen">{userAction}</div>
-      </div>
-      <div className="player-container">
-        <h2> Computer </h2>
-        <div className="action-chosen"> {computerAction} </div>
-      </div>
-      <h3 className="winner"> {winner} </h3>
-      <button
-        className="play"
-        onClick={() => {
-          handleReset();
-        }}
-      >
-        Restart
-      </button>
-    </div>
+    <>
+      {usersData.map((user) => {
+        return (
+          <SingleUser
+            key={user.id}
+            name={user.name}
+            email={user.email}
+            contact={user.phone}
+            website={user.website}
+            company={user.company.name}
+            address={user.address.street}
+            username={user.username}
+          />
+        );
+      })}
+    </>
   );
 }
 

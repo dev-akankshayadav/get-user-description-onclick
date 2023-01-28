@@ -3,10 +3,9 @@
   font-family: sans-serif;
 }
 
-.detail-wrapper {
+.company-wrapper {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+  flex-direction: column;
   align-items: flex-start;
   justify-content: space-around;
   background-color: pink;
@@ -16,91 +15,79 @@
   font-family: sans-serif;
 }
 
+.main-heading {
+  font-size: 46px;
+  margin-left: 20px;
+}
+
 .company-name {
-  display: flex;
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0px;
 }
 
-.contact-wrapper {
+.company-detail-wrapper {
   display: flex;
-  flex-direction: column;
+  flex: 1;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.city-wrapper {
+.company-detail-row-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.keyvalue-wrapper {
   display: flex;
   flex-direction: column;
+  margin-right: 20px;
 }
 
 .state-wrapper {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
-h1 {
-  font-size: 1rem;
+.company-description-wrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: blanchedalmond;
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin-top: 20px;
 }
 
-h2 {
-  font-size: 0.75rem;
+.company-description-row-wrapper {
+  display: flex;
+  flex-direction: row;
 }
 
-button {
+.button {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
-  border: none;
-  border-radius: 50px;
+  height: 40px;
+  border-radius: 20px;
   background-color: red;
   color: white;
-  padding: 10px;
+  padding: 0 30px;
   cursor: pointer;
+  border: none;
 }
 
-.detailed-description {
-  padding-top: 50%;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-between;
-  background-color: white;
-  border-radius: 20px;
-  margin: 20px;
-  padding: 30px;
-  opacity: 1;
-  cursor: pointer;
-}
-.detailed-description-hide {
-  opacity: 0;
+.title { 
+  font-size: 24px;
+  margin-bottom: 0;
+  font-weight: 700;
 }
 
-h1 {
-  font-size: 1rem;
-}
-
-h2 {
-  font-size: 0.75rem;
-}
-
-h3 {
-  font-size: 0.65rem;
-}
-.company-wrapper {
-  padding-top: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.address-wrapper {
-  padding-top: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.username-wrapper {
-  padding-top: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+.value { 
+  font-size: 20px;
+  font-weight: 500;
+  color: #333;
 }

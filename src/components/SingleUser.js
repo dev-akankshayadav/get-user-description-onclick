@@ -2,15 +2,14 @@ import React from "react";
 import { useState } from "react";
 import "../App.css";
 
-const SingleUser = ({ user  }) => {
-  const { name, email, website, phone, address, company, username  } = user;
+const SingleUser = ({ user }) => {
+  const { name, email, website, phone, address, company, username } = user;
   const [descriptionVisible, setDescriptionVisible] = useState(false);
-
 
   const toggleDescription = () => {
     setDescriptionVisible((prevState) => !prevState);
   };
-    
+
   return (
     <div className="company-wrapper">
       <h2 className="company-name">{name}</h2>
@@ -33,23 +32,25 @@ const SingleUser = ({ user  }) => {
           {descriptionVisible ? "hide detail" : "view detail"}
         </button>
       </div>
-      {descriptionVisible && <div className="company-description-wrapper">
-        <p className="company-name">Description</p>
-        <div className="company-description-row-wrapper">
-          <div className="keyvalue-wrapper">
-            <p className="title">Company</p>
-            <p className="value">{company.name} </p>
-          </div>
-          <div className="keyvalue-wrapper">
-            <p className="title">Address</p>
-            <p className="value">{address.street}</p>
-          </div>
-          <div className="keyvalue-wrapper">
-            <p className="title">Username</p>
-            <p className="value">{username}</p>
+      {descriptionVisible && (
+        <div className="company-description-wrapper">
+          <p className="company-name">Description</p>
+          <div className="company-description-row-wrapper">
+            <div className="keyvalue-wrapper">
+              <p className="title">Company</p>
+              <p className="value">{company.name} </p>
+            </div>
+            <div className="keyvalue-wrapper">
+              <p className="title">Address</p>
+              <p className="value">{address.street}</p>
+            </div>
+            <div className="keyvalue-wrapper">
+              <p className="title">Username</p>
+              <p className="value">{username}</p>
+            </div>
           </div>
         </div>
-      </div>}
+      )}
     </div>
   );
 };
